@@ -8,6 +8,8 @@ services:
     command: [ 'consul', 'agent', '-config-dir=/etc/consul.d' ]
     volumes:
       - ./servers/server01:/etc/consul.d
+    ports:
+      - "8500:8500"
   consulserver02:
     image: consul:1.10
     container_name: consulserver02
